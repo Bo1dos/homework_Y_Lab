@@ -1,0 +1,59 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Dev\'s/homework_Y_Lab/demo/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'demo 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'demo 1.0-SNAPSHOT API'
+com.example
+com.example.DTO
+com.example.forms
+com.example.service
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/App.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/DTO/Conference.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/DTO/User.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/DTO/Workplace.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/forms/Login.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/forms/Registration.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/service/ConferenceService.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/service/ReservationService.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/service/UserService.java'
+'D:/Dev\'s/homework_Y_Lab/demo/src/main/java/com/example/service/WorkplaceService.java'
+D:\Dev's\homework_Y_Lab\demo\src\main\java = 1718875665046
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\allclasses-index.html = 1719055919914
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\allpackages-index.html = 1719055919936
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\copy.svg = 1719055920132
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\element-list = 1719055919410
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\help-doc.html = 1719055920104
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\index-all.html = 1719055920066
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\index.html = 1719055919827
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\member-search-index.js = 1719055919995
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\module-search-index.js = 1719055919943
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\overview-summary.html = 1719055920091
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\overview-tree.html = 1719055919814
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\package-search-index.js = 1719055919945
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\script.js = 1719055920125
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\search-page.js = 1719055920151
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\search.html = 1719055920076
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\search.js = 1719055920142
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\stylesheet.css = 1719055920115
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\tag-search-index.js = 1719055920004
+D:\Dev's\homework_Y_Lab\demo\target\site\apidocs\type-search-index.js = 1719055919956

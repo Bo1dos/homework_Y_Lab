@@ -1,6 +1,7 @@
 package com.example.Menu;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -8,7 +9,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.example.App;
-import com.example.DTO.User;
+import com.example.domain.User;
 import com.example.forms.Login;
 import com.example.service.ConferenceService;
 import com.example.service.ReservationService;
@@ -50,6 +51,7 @@ public class MenuTest {
     }
 
     @Test
+    @DisplayName("Test mainMenu method with exit command")
     public void testMainMenu_exitCommand() {
         menu.mainMenu();
         assertThat(outContent.toString()).contains("Enter command:");

@@ -2,20 +2,30 @@ package com.example.forms;
 
 import java.util.Scanner;
 
-import com.example.DTO.User;
+import com.example.domain.User;
 import com.example.service.UserService;
 
+/**
+ * Represents a login form that interacts with UserService to authenticate users.
+ */
 public class Login {
     private UserService userService;
-    private User currentUser;
 
-
+    /**
+     * Constructs a new Login object with a UserService dependency.
+     *
+     * @param userService The UserService instance to use for user authentication.
+     */
     public Login(UserService userService) {
         this.userService = userService;
     }
-    
-    public boolean getLoginForm(){
 
+    /**
+     * Displays the login form to the user and validates user credentials.
+     *
+     * @return true if the user is successfully authenticated, false otherwise.
+     */
+    public User loginUser() {
         String enterLoginString = "Enter Login: ";
         String enterPassString = "Enter Password: ";
 
@@ -28,32 +38,20 @@ public class Login {
         String enteredPass = scanner.nextLine();
 
         
-        
-        currentUser = userService.getUserByLogin(enteredLogin);
-        
+        User currentUser = userService.getUserByLogin(enteredLogin);
+
         boolean userPassFlag = false;
-        if(currentUser != null && currentUser.getPass().equals(enteredPass)){
+        
+        if (currentUser != null && currentUser.getPass().equals(enteredPass)) {
             userPassFlag = true;
-        } else {
-            currentUser = null;  // Ensure currentUser is set to null if login fails
-        }
-
-        //If user not found or password is incorrect
-        if(currentUser == null || userPassFlag == false){
+        } else if (currentUser == null || !userPassFlag) {
             System.out.println("User not found or password is incorrect. Try another login or password");
-            return false;
+            currentUser = null; 
         }
 
-       
-        return true;
-    }
 
-    
-    public User getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
-    }
+
 }

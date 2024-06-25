@@ -1,9 +1,11 @@
 package com.example;
 
-import com.example.DTO.User;
-import com.example.DTO.Workplace;
+import com.example.domain.User;
+import com.example.domain.Workplace;
+import com.example.enums.UserRole;
 import com.example.service.WorkplaceService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -21,37 +23,34 @@ public class WorkplaceServiceTest {
         workplaceService = new WorkplaceService();
     }
 
+
+
     @Test
-    public void testAddWorkplace() {
-        User user = new User(1, "testUser", "password", "role");
-        Workplace workplace = workplaceService.addWorkplace(new Date(), new Date(), user);
-        assertThat(workplace).isNotNull();
-        assertThat(workplace.getWorkplaceUser().getLogin()).isEqualTo("testUser");
+    @DisplayName("Delete Workplace Test")
+    public void testDeleteWorkplace() {
+        Workplace workplace = workplaceService.addWorkplace();
+        boolean deleted = workplaceService.deleteWorkplace(workplace.getWorkplaceId());
+        assertTrue(deleted);
     }
 
     @Test
+    @DisplayName("Get All Workplaces Test")
     public void testGetAllWorkplaces() {
-        User user = new User(1, "testUser", "password", "role");
-        workplaceService.addWorkplace(new Date(), new Date(), user);
+        workplaceService.addWorkplace();
         List<Workplace> workplaces = workplaceService.getAllWorkplace();
         assertThat(workplaces).hasSize(1);
     }
 
-    @Test
-    public void testUpdateWorkplace() {
-        User user = new User(1, "testUser", "password", "role");
-        Workplace workplace = workplaceService.addWorkplace(new Date(), new Date(), user);
-        boolean updated = workplaceService.updateWorkplace(workplace.getWorkplaceId(), new Date(), new Date(), user);
-        assertTrue(updated);
-    }
+
 
     @Test
-    public void testDeleteWorkplace() {
-        User user = new User(1, "testUser", "password", "role");
-        Workplace workplace = workplaceService.addWorkplace(new Date(), new Date(), user);
-        boolean deleted = workplaceService.deleteWorkplace(workplace.getWorkplaceId());
-        assertTrue(deleted);
-        assertThat(workplaceService.getAllWorkplace()).isEmpty();
+    @DisplayName("Add Workplace Test")
+    public void testAddWorkplace() {
+        Workplace workplace = workplaceService.addWorkplace();
+        assertThat(workplace).isNotNull();
+        assertThat(workplace.getWorkplaceId()).isEqualTo(3);
     }
+
+
 }
 

@@ -2,17 +2,31 @@ package com.example.forms;
 
 import java.util.Scanner;
 
-import com.example.DTO.User;
+import com.example.domain.User;
+import com.example.enums.UserRole;
 import com.example.service.UserService;
 
+/**
+ * Represents a registration form that interacts with UserService to register new users.
+ */
 public class Registration {
     private UserService userService;
 
+    /**
+     * Constructs a new Registration object with a UserService dependency.
+     *
+     * @param userService The UserService instance to use for user registration.
+     */
     public Registration(UserService userService) {
         this.userService = userService;
     }
-    
-    public boolean getRegistrationForm(){
+
+    /**
+     * Displays the registration form to the user and registers a new user.
+     *
+     * @return true if the user is successfully registered, false otherwise.
+     */
+    public boolean registrationUser() {
         String enterLoginString = "Enter Login: ";
         String enterPassString = "Enter Password: ";
 
@@ -24,14 +38,17 @@ public class Registration {
         System.out.print(enterPassString);
         String enteredPass = scanner.nextLine();
 
-        
-        if(enteredLogin.length() <3){
+        // Validate login length
+        if (enteredLogin.length() < 3) {
             System.out.println("Try another login (more than 3 characters)");
             return false;
         }
-        User user = userService.addUser(enteredLogin, enteredPass, "normal");
-         
-        if(user == null){
+
+        // Attempt to add user with entered credentials
+        User user = userService.addUser(enteredLogin, enteredPass, UserRole.USER);
+
+        // Check if user registration was successful
+        if (user == null) {
             System.out.println("A user with this login already exists. Try another login (more than 3 characters)");
             return false;
         }
